@@ -136,4 +136,4 @@ class Extrato(models.Model):
     fk_conta = models.ForeignKey(Conta, on_delete = models.CASCADE,  verbose_name ="Conta")
 
     def __str__(self):
-        return "{}({})".format(self.fk_conta.fk_usuario.fk_cliente.nome)
+        return str(self.fk_conta.fk_usuario.fk_cliente.nome)
