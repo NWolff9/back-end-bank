@@ -42,7 +42,7 @@ class TransacaoSerializer(serializers.ModelSerializer):
 class ContatosSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contatos
-        fields = ['Titular','Favorito']
+        fields = ['titular','favorito']
 
 class CartaoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -52,12 +52,12 @@ class CartaoSerializer(serializers.ModelSerializer):
 class Pagamento_emprestimoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pagamento_emprestimo
-        fields = ['vencimento','pagamento','valor_parcela','fk_emprestimo']
+        fields = ['vencimento','pagamento','valor_parcela']
 
 class ExtratoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Extrato
-        fields = ['horario','opercacao','descritivo','valor','fk_conta']
+        fields = ['horario','operacao','descritivo','valor','fk_conta']
 
 
 

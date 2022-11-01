@@ -74,11 +74,11 @@ class Emprestimo(models.Model):
     FUNCIONARIO_3='I'
     FUNCIONARIOS=[
         (FUNCIONARIO_1,'Larissa'),
-        (FUNCIONARIO_1,'Brian'),
-        (FUNCIONARIO_1,'Icaro')
+        (FUNCIONARIO_2,'Brian'),
+        (FUNCIONARIO_3,'Icaro')
     ]
 
-    aprovacao = models.BooleanField("Aprovado")
+    aprovacao = models.BooleanField()
     valor = models.DecimalField(max_digits=10, decimal_places = 2) 
     data = models.DateField()
     taxa_juros = models.DecimalField(max_digits=10, decimal_places = 2, verbose_name = 'Taxa de juros')
