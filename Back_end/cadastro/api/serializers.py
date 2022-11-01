@@ -1,10 +1,18 @@
 from rest_framework import serializers
 from cadastro.models import Cliente, Usuario, Conta, Cartao, Fatura, Emprestimo, Pagamento_emprestimo, Transacao, Contatos, Extrato
+from pictures.contrib.rest_framework import PictureField
 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
-        fields = ['nome','sobrenome','celular','endereco','email','cpf']
+        fields = ['id','nome','sobrenome','celular','endereco','email','cpf','foto']
+    #foto = PictureField()
+
+class ClienteFotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cliente
+        fields = ['nome','sobrenome','celular','endereco','email','cpf','foto']
+    foto = PictureField()
 
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:

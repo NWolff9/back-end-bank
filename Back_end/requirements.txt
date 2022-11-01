@@ -1,0 +1,9 @@
+Django
+whitenoise
+asgiref==3.5.2
+django-pictures==1.0rc5
+djangorestframework==3.14.0
+Pillow==9.3.0
+pytz==2022.4
+sqlparse==0.4.3
+tzdata==2022.5

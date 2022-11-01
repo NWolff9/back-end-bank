@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-ac063b(h8y@d9*3w)yikkft6%u6ez%9(bwg*z2&l(n$x9jcm03
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -22,7 +22,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'cadastro',
+    'pictures',
+    'whitenoise'
 ]
+
+PICTURES = {
+    "BREAKPOINTS": {
+        "xs": 576,
+        "s": 768,
+        "m": 992,
+        "l": 1200,
+        "xl": 1400,
+    },
+    "GRID_COLUMNS": 12,
+    "CONTAINER_WIDTH": 1200,
+    "FILE_TYPES": ["WEBP"],
+    "PIXEL_DENSITIES": [1, 2],
+    "USE_PLACEHOLDERS": False,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -32,7 +49,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://apiwolff.azurewebsites.net']
 
 ROOT_URLCONF = 'wolffs_bank.urls'
 
@@ -89,6 +110,9 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+MEDIA_URL = '/galeria/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'galeria')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

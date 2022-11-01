@@ -1,7 +1,5 @@
-from tabnanny import verbose
-from tkinter.filedialog import SaveFileDialog
-from wsgiref.validate import validator
 from django.db import models
+from pictures.models import PictureField
 
 class Cliente(models.Model):
 
@@ -11,7 +9,9 @@ class Cliente(models.Model):
     endereco = models.CharField(max_length= 250, verbose_name = "endereço")
     email = models.EmailField(max_length = 254)
     cpf = models.CharField(max_length=11,unique=True, verbose_name = "CPF")
-    
+    foto = PictureField(
+      upload_to="galeria"
+    )
     def __str__(self):
         return "{}({})".format(self.nome, self.sobrenome)
 

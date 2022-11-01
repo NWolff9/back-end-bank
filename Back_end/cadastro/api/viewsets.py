@@ -1,11 +1,14 @@
 from rest_framework import viewsets
-from Back_end.cadastro.models import Cartao, Conta, Contatos, Emprestimo, Extrato, Fatura, Pagamento_emprestimo, Transacao
-from cadastro.api.serializers import ClienteSerializer, UsuarioSerializer, ContaSerializer, CartaoSerializer, FaturaSerializer, EmprestimoSerializer, Pagamento_emprestimoSerializer, TransacaoSerializer, ContatosSerializer, ExtratoSerializer
-from cadastro.models import Cliente, Usuario
+from cadastro.api.serializers import ClienteSerializer, ClienteFotoSerializer, UsuarioSerializer, ContaSerializer, CartaoSerializer, FaturaSerializer, EmprestimoSerializer, Pagamento_emprestimoSerializer, TransacaoSerializer, ContatosSerializer, ExtratoSerializer
+from cadastro.models import Cliente, Usuario, Cartao, Conta, Contatos, Emprestimo, Extrato, Fatura, Pagamento_emprestimo, Transacao
 
 class ClienteViewSet(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
+
+class ClienteFotoViewSet(viewsets.ModelViewSet):
+    queryset = Cliente.objects.all()
+    serializer_class = ClienteFotoSerializer
 
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
