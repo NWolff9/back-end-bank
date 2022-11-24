@@ -2,7 +2,6 @@
 import decimal
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-
 from cadastro.api.serializers import ClienteSerializer, ClienteFotoSerializer, UsuarioSerializer, ContaSerializer, CartaoSerializer, FaturaSerializer, EmprestimoSerializer, Pagamento_emprestimoSerializer, TransacaoSerializer, ContatosSerializer, ExtratoSerializer
 from cadastro.models import Cliente, Usuario, Cartao, Conta, Contatos, Emprestimo, Extrato, Fatura, Pagamento_emprestimo, Transacao
 
