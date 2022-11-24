@@ -37,7 +37,7 @@ class EmprestimoSerializer(serializers.ModelSerializer):
 class TransacaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transacao
-        fields = ['remetente','destinatario','valor','data']
+        fields = ['id','remetente','destinatario','valor','data']
 
 class ContatosSerializer(serializers.ModelSerializer):
     class Meta:
